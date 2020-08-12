@@ -24,7 +24,9 @@ public class atoiLeeds {
 		if (index < str.length() && str.charAt(index) == '-'){
 			isNegative = true;
 			index ++;
-		}
+		} else if (index <str.length() && str.charAt(index) == '+'){
+            index ++; // we discard the character and continue
+        }
 		
 		
 		// convert the digits
@@ -34,7 +36,7 @@ public class atoiLeeds {
 			   )){
 
 			try { //multiplyExact will throw an exception on overflow
-				result = Math.multiplyExact(result, 10) + Character.getNumericValue(str.charAt(index));
+				result = Math.addExact(Math.multiplyExact(result, 10), Character.getNumericValue(str.charAt(index)));
 				index ++; 
 			} catch (ArithmeticException e) {
 				// we went above the max

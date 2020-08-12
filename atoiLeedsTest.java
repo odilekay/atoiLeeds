@@ -68,4 +68,17 @@ class atoiLeedsTest {
 		assertTrue(testAtoi.myAtoi("91283472332") == Integer.MAX_VALUE);
 		
 	}
+	@Test // testing +1
+	void testMyAtoiPositiveNumber() {
+		atoiLeeds testAtoi = new atoiLeeds();
+		assertTrue(testAtoi.myAtoi("+1") == 1);
+		
+	}
+	@Test // testing "2147483648"
+	void testMyAtoiBigNumber() {
+		atoiLeeds testAtoi = new atoiLeeds();
+		assertTrue(testAtoi.myAtoi("2147483648") ==  2147483647);
+		
+	}
+	
 }
